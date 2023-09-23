@@ -12,11 +12,10 @@ const request = supertest(base_url);
 const orderInstance = new OrderModel();
 
 fdescribe('Order model', () => {
-
   it('has an add product to order method', () => {
     expect(orderInstance.addProductToOrder).toBeDefined();
   });
-  
+
   it('has get active order', () => {
     expect(orderInstance.getActiveOrder).toBeDefined();
   });
@@ -36,7 +35,6 @@ fdescribe('Order model', () => {
   it('has an create method', () => {
     expect(orderInstance.createOrder).toBeDefined();
   });
-
 });
 
 fdescribe('Orders Handler', () => {

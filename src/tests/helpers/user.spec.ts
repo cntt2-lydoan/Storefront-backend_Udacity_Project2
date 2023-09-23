@@ -63,7 +63,6 @@ const userPost = {
 };
 let token: string;
 fdescribe('User model', () => {
-
   it('has an update user method', () => {
     expect(userInstance.updateUser).toBeDefined();
   });

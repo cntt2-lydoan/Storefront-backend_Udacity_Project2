@@ -71,7 +71,7 @@ fdescribe('Product model', () => {
   it('has get product by id method', () => {
     expect(productInstance.getProductById).toBeDefined();
   });
-  
+
   it('has an update method', () => {
     expect(productInstance.updateProduct).toBeDefined();
   });
@@ -88,7 +88,6 @@ fdescribe('product handle', () => {
     await prepareProducts(products);
     token = `bearer ${await genToken('user')}`;
   });
-
 
   fit('should add new product to result is added successfully', async () => {
     const response = await request
@@ -136,8 +135,6 @@ fdescribe('product handle', () => {
       description: 'description update',
       price: 222,
     });
-
-
   });
 
   fit('should delete a product to result is deleted successfully', async () => {
