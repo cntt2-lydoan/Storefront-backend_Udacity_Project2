@@ -14,7 +14,7 @@
 
   },
 
-  "prod": {
+  "test": {
 
     "driver": "pg",
 

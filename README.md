@@ -5,7 +5,7 @@ POSTGRES_HOST = 127.0.0.1
 
 POSTGRES_DB_DEV = fantasy_worlds_dev
 
-POSTGRES_DB = fantasy_worlds
+POSTGRES_DB_TEST = fantasy_worlds
 
 POSTGRES_USER = postgres
 
@@ -40,7 +40,7 @@ create file database.json file and copy content to file
 
   },
 
-  "prod": {
+  "test": {
 
     "driver": "pg",
 
@@ -95,7 +95,7 @@ services:
 
       POSTGRES_USER: postgres
 
-      POSTGRES_DB: fantasy_worlds_dev
+      POSTGRES_DB_TEST: fantasy_worlds_dev
 
     ports:
 
