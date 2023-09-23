@@ -46,17 +46,16 @@ fdescribe('Orders Handler', () => {
     token = `Bearer ${await genToken('user test')}`;
   });
 
-  fit('should add product to order details to result is added successfully', async () => {
+  fit('should add new order to result is added successfully', async () => {
     const response = await request
-      .post('/orders/users/1/products')
+      .post(orderUrl)
       .set('Authorization', token)
-      .send({ product_id: 1, quantity: 2 });
+      .send({ userId: 1 });
 
     expect(response.status).toBe(200);
     expect(response.body.id).toEqual(1);
-    expect(response.body.order_id).toEqual(1);
-    expect(response.body.product_id).toEqual(1);
-    expect(response.body.quantity).toEqual(2);
+    expect(response.body.user_id).toEqual(1);
+    expect(response.body.current_status).toEqual('active');
   });
 
   fit('should get active order of user', async () => {
@@ -69,16 +68,17 @@ fdescribe('Orders Handler', () => {
     expect(response.body.current_status).toEqual('active');
   });
 
-  fit('should add new order to result is added successfully', async () => {
+  fit('should add product to order details to result is added successfully', async () => {
     const response = await request
-      .post(orderUrl)
+      .post('/orders/users/1/products')
       .set('Authorization', token)
-      .send({ userId: 1 });
+      .send({ product_id: 1, quantity: 2 });
 
     expect(response.status).toBe(200);
     expect(response.body.id).toEqual(1);
-    expect(response.body.user_id).toEqual(1);
-    expect(response.body.current_status).toEqual('active');
+    expect(response.body.order_id).toEqual(1);
+    expect(response.body.product_id).toEqual(1);
+    expect(response.body.quantity).toEqual(2);
   });
 
   fit('should remove product to order details to result is removed successfully', async () => {

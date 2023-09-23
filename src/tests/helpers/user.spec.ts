@@ -91,36 +91,6 @@ fdescribe('user handle', () => {
     token = `bearer ${await genToken('user test')}`;
   });
 
-  fit('should add new user to result is added successfully', async () => {
-    const response = await request
-      .post(userUrl)
-      .set('Authorization', token)
-      .send(userPost);
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toEqual({
-      id: 5,
-      username: 'user create',
-      email: 'user1@gmail.com',
-      first_name: 'first name create',
-      last_name: 'last name create',
-    });
-  });
-
-  fit('should update user to result is updated successfully', async () => {
-    const response = await request
-      .put(`${userUrl}${4}`)
-      .set('Authorization', token)
-      .send(userPut);
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toEqual({
-      id: 4,
-      username: 'user update',
-      email: 'user1@gmail.com',
-      first_name: 'first name update',
-      last_name: 'last name update',
-    });
-  });
-
   fit('should get all users', async () => {
     const response = await request.get(userUrl).set('Authorization', token);
     expect(response.statusCode).toBe(200);
@@ -143,7 +113,37 @@ fdescribe('user handle', () => {
     });
   });
 
-  fit('should delete user to result is deleted successfully', async () => {
+  fit('should add new user', async () => {
+    const response = await request
+      .post(userUrl)
+      .set('Authorization', token)
+      .send(userPost);
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual({
+      id: 5,
+      username: 'user create',
+      email: 'user1@gmail.com',
+      first_name: 'first name create',
+      last_name: 'last name create',
+    });
+  });
+
+  fit('should update user', async () => {
+    const response = await request
+      .put(`${userUrl}${4}`)
+      .set('Authorization', token)
+      .send(userPut);
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual({
+      id: 4,
+      username: 'user update',
+      email: 'user1@gmail.com',
+      first_name: 'first name update',
+      last_name: 'last name update',
+    });
+  });
+
+  fit('should delete user', async () => {
     const response = await request
       .delete(`${userUrl}${2}`)
       .set('Authorization', token);

@@ -13,7 +13,7 @@ POSTGRES_PASSWORD = password
 
 ENV = dev
 
-PEPPER = haha
+PEPPER = doananhly@1999
 
 SALT_ROUNDS = 10
 
@@ -61,6 +61,9 @@ API Store front backend
 ## Installation
 npm install
 
+## Run build
+npm run build
+
 ## Formatting the Source Code
 npm run prettier
 
@@ -73,12 +76,12 @@ npm run test
 
 ## Running the Project
 
-nodemon
+npx nodemon
 
 ## docker compose file
 create file docker-compose.yml file and copy content to file
 
-version: '3.9'
+version: '3.8'
 
 services:
 

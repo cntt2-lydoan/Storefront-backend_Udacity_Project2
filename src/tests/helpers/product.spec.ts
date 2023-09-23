@@ -89,21 +89,6 @@ fdescribe('product handle', () => {
     token = `bearer ${await genToken('user')}`;
   });
 
-  fit('should add new product to result is added successfully', async () => {
-    const response = await request
-      .post(productUrl)
-      .set('Authorization', token)
-      .send(productPost);
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toEqual({
-      id: 5,
-      name: 'Product update',
-      description: 'description update',
-      price: 111,
-    });
-    productId = response.body.id;
-  });
-
   fit('should get all products', async () => {
     const response = await request.get(productUrl).set('Authorization', token);
     expect(response.statusCode).toBe(200);
@@ -121,6 +106,21 @@ fdescribe('product handle', () => {
       description: 'description 1',
       price: 100000,
     });
+  });
+
+  fit('should add new product to result is added successfull', async () => {
+    const response = await request
+      .post(productUrl)
+      .set('Authorization', token)
+      .send(productPost);
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual({
+      id: 5,
+      name: 'Product update',
+      description: 'description update',
+      price: 111,
+    });
+    productId = response.body.id;
   });
 
   fit('should update a product to result is updated successfully', async () => {
