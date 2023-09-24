@@ -32,11 +32,11 @@ create file database.json file and copy content to file
 
     "host": "127.0.0.1",
 
-    "database": "fantasy_worlds_dev",
+    "database": { "ENV": "POSTGRES_DB_DEV" },
 
-    "user": "postgres",
+    "user": { "ENV": "POSTGRES_USER" },
 
-    "password": "password"
+    "password": { "ENV": "POSTGRES_PASSWORD" }
 
   },
 
@@ -46,15 +46,16 @@ create file database.json file and copy content to file
 
     "host": "127.0.0.1",
 
-    "database": "fantasy_worlds",
+    "database": { "ENV": "POSTGRES_DB_TEST" },
 
-    "user": "postgres",
+    "user": { "ENV": "POSTGRES_USER" },
 
-    "password": "password"
+    "password": { "ENV": "POSTGRES_PASSWORD" }
 
   }
 
 }
+
 # Project Name
 API Store front backend
 
