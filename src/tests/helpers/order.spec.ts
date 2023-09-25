@@ -12,8 +12,8 @@ const request = supertest(base_url);
 const orderInstance = new OrderModel();
 
 fdescribe('Order model', () => {
-  it('has an add product to order method', () => {
-    expect(orderInstance.addProductToOrder).toBeDefined();
+  it('has an create method', () => {
+    expect(orderInstance.createOrder).toBeDefined();
   });
 
   it('has get active order', () => {
@@ -24,16 +24,16 @@ fdescribe('Order model', () => {
     expect(orderInstance.updateStatus).toBeDefined();
   });
 
-  it('has an remove product from order method', () => {
-    expect(orderInstance.removeProductFromOrder).toBeDefined();
-  });
-
   it('has get complete orders', () => {
     expect(orderInstance.getCompletedOrders).toBeDefined();
   });
 
-  it('has an create method', () => {
-    expect(orderInstance.createOrder).toBeDefined();
+  it('has an add product to order method', () => {
+    expect(orderInstance.addProductToOrder).toBeDefined();
+  });
+
+  it('has an remove product from order method', () => {
+    expect(orderInstance.removeProductFromOrder).toBeDefined();
   });
 });
 

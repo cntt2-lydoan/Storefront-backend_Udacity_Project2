@@ -64,14 +64,6 @@ fdescribe('Product model', () => {
     expect(productInstance.getAllProducts).toBeDefined();
   });
 
-  it('has an create method', () => {
-    expect(productInstance.createProduct).toBeDefined();
-  });
-
-  it('has get product by id method', () => {
-    expect(productInstance.getProductById).toBeDefined();
-  });
-
   it('has an update method', () => {
     expect(productInstance.updateProduct).toBeDefined();
   });

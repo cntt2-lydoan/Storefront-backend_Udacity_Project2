@@ -63,16 +63,8 @@ const userPost = {
 };
 let token: string;
 fdescribe('User model', () => {
-  it('has an update user method', () => {
-    expect(userInstance.updateUser).toBeDefined();
-  });
-
   it('has an create method', () => {
     expect(userInstance.createUser).toBeDefined();
-  });
-
-  it('has an delete user method', () => {
-    expect(userInstance.deleteUser).toBeDefined();
   });
 
   it('has get user by id method', () => {
@@ -81,6 +73,14 @@ fdescribe('User model', () => {
 
   it('has get all users method', () => {
     expect(userInstance.getAllUsers).toBeDefined();
+  });
+
+  it('has an update user method', () => {
+    expect(userInstance.updateUser).toBeDefined();
+  });
+
+  it('has an delete user method', () => {
+    expect(userInstance.deleteUser).toBeDefined();
   });
 });
 
